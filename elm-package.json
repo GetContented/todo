@@ -1,0 +1,15 @@
+{
+    "version": "1.0.0",
+    "summary": "A simple TODO app",
+    "repository": "https://github.com/GetContented/todo.git",
+    "license": "BSD3",
+    "source-directories": [
+        "."
+    ],
+    "exposed-modules": [],
+    "dependencies": {
+        "elm-lang/core": "4.0.0 <= v < 5.0.0",
+        "elm-lang/html": "1.0.0 <= v < 1.0.1"
+    },
+    "elm-version": "0.17.0 <= v < 0.18.0"
+}
