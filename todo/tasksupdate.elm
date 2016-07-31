@@ -1,4 +1,4 @@
-module Todo.TasksUpdate exposing ( Msg(..), update, addNewWithRandom )
+module Todo.TasksUpdate exposing ( Msg(..), update, addNewWithNumber )
 import Todo.TasksModel as TasksModel exposing ( Tasks, Model, TaskId
                                               , defaultTask, appendNew, appendNewUsingNumber
                                               , delete, updateTask )
@@ -27,6 +27,6 @@ updateTasks : (Tasks -> Tasks) -> Model -> Model
 updateTasks updater model =
   { model | tasks = updater model.tasks }
 
-addNewWithRandom : Int -> Msg
-addNewWithRandom number =
+addNewWithNumber : Int -> Msg
+addNewWithNumber number =
   AddTaskWithNumber number

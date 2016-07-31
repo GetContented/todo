@@ -40,7 +40,7 @@ update message ({ tasks } as model) =
     TasksMsg msg ->
       ({ model | tasks = Tasks.update msg tasks }, Cmd.none)
     MakeRandomTask ->
-      (model, Random.generate (TasksMsg << Tasks.addNewWithRandom) (Random.int 1 6))
+      (model, Random.generate (TasksMsg << Tasks.addNewWithNumber) (Random.int 1 6))
 
 -- Subscriptions
 
