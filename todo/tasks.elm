@@ -1,5 +1,5 @@
 module Todo.Tasks exposing ( Model, Msg, init, update, view
-                           , newButton, listView )
+                           , newButton, listView, addNewWithRandom )
 import HtmlHelper exposing ( li_, ul_, div_, makeButton )
 import Todo.TasksModel as TasksModel exposing ( Model, init )
 import Todo.TasksUpdate as TasksUpdate exposing ( Msg(..) )
@@ -20,6 +20,9 @@ type alias Msg = TasksUpdate.Msg
 
 update : Msg -> Model -> Model
 update = TasksUpdate.update
+
+addNewWithRandom : Int -> Msg
+addNewWithRandom = TasksUpdate.addNewWithRandom
 
 -- View
 

@@ -1,4 +1,5 @@
-module Todo.TasksModel exposing ( Model, TaskId, Tasks, init, defaultTask, toList, appendNew, delete, updateTask )
+module Todo.TasksModel exposing ( Model, TaskId, Tasks, init, defaultTask
+                                , toList, appendNew, appendNewUsingNumber, delete, updateTask )
 import Dict as Dict exposing ( Dict, values )
 import Html exposing ( Html )
 import HtmlHelper exposing ( li_, ul_ )
@@ -31,6 +32,15 @@ appendNew tasks =
     newTask = defaultTask taskId
   in
     Dict.insert taskId newTask tasks
+
+appendNewUsingNumber : Int -> Tasks -> Tasks
+appendNewUsingNumber number tasks =
+  let
+    taskId = nextTaskId tasks
+    newTask = defaultTask number
+  in
+    Dict.insert taskId newTask tasks
+
 
 delete : TaskId -> Tasks -> Tasks
 delete deleteId tasks =
